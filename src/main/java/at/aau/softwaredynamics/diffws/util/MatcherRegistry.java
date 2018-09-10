@@ -13,7 +13,7 @@ public class MatcherRegistry {
 
         // TODO (Thomas): init from config
         // TODO Insert differs here
-        // matcherMap.put(1, MyDiffer.class);
+        matcherMap.put(1, MyersDiff.class);
     }
 
     public HashMap<Integer, Class<? extends Differ>> getMatcherMap() {
