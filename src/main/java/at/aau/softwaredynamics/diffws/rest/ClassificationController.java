@@ -6,6 +6,7 @@ import at.aau.softwaredynamics.diffws.service.ClassificationService;
 import at.aau.softwaredynamics.diffws.util.DifferFactory;
 import at.aau.softwaredynamics.diffws.util.MatcherRegistry;
 
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.boot.json.BasicJsonParser;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,14 @@ public class ClassificationController {
 
     }
 
+    /**
+     * Classifies the two revisions with the selected algorithm (id)
+     * @param payload JSON with src (string), dst (string) and id (int)
+     * @return Classification result of the two revisions
+     */
     @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
+    @ApiOperation(value = "Classify changes", notes = "Classifies the changes between two files", response = DiffResult.class)
     public DiffResult classify(@RequestBody String payload) {
         HashMap<String, Object> inputMap = (HashMap<String, Object>) new BasicJsonParser().parseMap(payload);
 

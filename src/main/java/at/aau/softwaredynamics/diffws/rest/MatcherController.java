@@ -1,5 +1,6 @@
 package at.aau.softwaredynamics.diffws.rest;
 
+import at.aau.softwaredynamics.diffws.domain.DiffResult;
 import at.aau.softwaredynamics.diffws.domain.Differ;
 import at.aau.softwaredynamics.diffws.domain.Matcher;
 import at.aau.softwaredynamics.diffws.util.MatcherRegistry;
@@ -7,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +28,8 @@ public class MatcherController {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
-    public String getAll() throws JsonProcessingException {
+    @ApiOperation(value = "Matcher list", notes = "Returns a list of all available matchers", response = Differ.class)
+    public String getAllMatchers() throws JsonProcessingException {
         ArrayList<Matcher> allMatchers = new ArrayList<>();
 
         for (Map.Entry<Integer, Class<? extends Differ>> entry : matcherRegistry.getMatcherMap().entrySet()) {
