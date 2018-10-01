@@ -1,6 +1,5 @@
 package at.aau.softwaredynamics.diffws.rest;
 
-import at.aau.softwaredynamics.diffws.domain.DiffResult;
 import at.aau.softwaredynamics.diffws.domain.Differ;
 import at.aau.softwaredynamics.diffws.domain.Matcher;
 import at.aau.softwaredynamics.diffws.util.MatcherRegistry;
