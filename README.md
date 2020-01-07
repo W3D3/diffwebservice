@@ -1,6 +1,6 @@
 # Diff Webservice Template
 
-This is a basic Java based webservice to be used in combination with [DiffViz](https://github.com/W3D3/diffviz).
+This is a basic Java based webservice to be used in combination with [DiffViz](https://github.com/W3D3/DiffVisualizer).
 It comes with the Google Diff-Match-Patch Algorithm as an example.
 ## Docs
 
